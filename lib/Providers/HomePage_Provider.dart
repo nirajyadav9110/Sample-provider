@@ -1,19 +1,28 @@
 import 'package:flutter/cupertino.dart';
 
 class HomePageProvider with ChangeNotifier{
-  bool? isEligible;
-  String? eligibilitymessage ='';
 
-  void checkEligibility(int age){
-    if(age >= 18){
-      isEligible = true;
-      eligibilitymessage ="You are Eligible!";
-      notifyListeners();
-    }
-    else{
-      isEligible = false;
-      eligibilitymessage ="You are not Eligible!";
-      notifyListeners();
-    }
+  int? Ans = 0;
+
+  addition(int val1 , int val2)
+  {
+    Ans = val1 + val2 ;
+    notifyListeners();
   }
-}
+
+  substraction(int val1 , int val2)
+  {
+    Ans = val1 - val2 ;
+    notifyListeners();
+  }
+  multiplication(int val1 , int val2)
+  {
+    Ans = val1 * val2 ;
+    notifyListeners();
+  }
+  division (int val1 , int val2)
+  {
+    Ans = (val1/val2) as int?;
+    notifyListeners();
+  }
+ }
